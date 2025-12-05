@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servomoteur & Arduino - Le Labo</title>
+    <style>
+        /* CHARTE GRAPHIQUE GLOBALE */
+        :root {
+            --primary-color: #1d4ed8;
+            --primary-hover: #1e40af;
+            --secondary-color: #0f172a;
+            --bg-color: #eff6ff;
+            --text-color: #334155;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* NAVIGATION */
+        nav {
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* HEADER ARTICLE */
+        .article-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .article-meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin: 10px 0 30px 0;
+            line-height: 1.2;
+        }
+
+        .cover-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+        /* CONTENU */
+        .content {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin-top: 40px;
+            font-size: 1.8rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        /* BLOC DE CODE */
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', monospace;
+            font-size: 0.95rem;
+            border-left: 4px solid #f59e0b;
+            /* Orange pour le code */
+        }
+
+        .comment {
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        /* LISTE MATERIEL */
+        .hardware-list {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <nav>
+            <a href="blog.html" class="back-link">← Retour au Labo</a>
+        </nav>
+
+        <article>
+            <div class="article-header">
+                <div class="article-meta">IoT & Électronique • 10 min de code</div>
+                <h1>Contrôler un servomoteur avec Arduino Uno</h1>
+                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1000&q=80"
+                    alt="Arduino et Servo" class="cover-image">
+            </div>
+
+            <div class="content">
+                <p>Le servomoteur est l'actionneur roi de la robotique. Contrairement à un moteur classique qui tourne
+                    en continu, le servo peut maintenir une position précise (entre 0 et 180 degrés). Idéal pour un bras
+                    robotique ou... une barrière de péage !</p>
+
+                <h2>1. Le Matériel Nécessaire</h2>
+                <div class="hardware-list">
+                    <span class="badge">Arduino Uno</span>
+                    <span class="badge">Servomoteur SG90</span>
+                    <span class="badge">3x Jumper Wires</span>
+                </div>
+
+                <h2>2. Le Câblage (Wiring)</h2>
+                <p>Le servo a 3 fils, attention à ne pas les inverser :</p>
+                <ul>
+                    <li><strong>Marron (ou Noir) :</strong> GND (Masse) → Connecter au GND Arduino.</li>
+                    <li><strong>Rouge :</strong> VCC (+) → Connecter au 5V Arduino.</li>
+                    <li><strong>Orange (ou Jaune) :</strong> Signal (PWM) → Connecter au Pin 9.</li>
+                </ul>
+
+                <h2>3. Le Code C++</h2>
+                <p>Nous utilisons la bibliothèque standard <code>Servo.h</code> qui gère les signaux PWM pour nous.</p>
+
+                <pre>
+#include &lt;Servo.h&gt;
+
+Servo monServo;  <span class="comment">// Création de l'objet servo</span>
+
+void setup() {
+  monServo.attach(9);  <span class="comment">// On attache le servo au Pin 9</span>
+}
+
+void loop() {
+  <span class="comment">// Aller à 0 degré</span>
+  monServo.write(0);
+  delay(1000);
+
+  <span class="comment">// Aller à 90 degrés</span>
+  monServo.write(90);
+  delay(1000);
+
+  <span class="comment">// Aller à 180 degrés</span>
+  monServo.write(180);
+  delay(1000);
+}
+                </pre>
+
+                <h2>4. Pour aller plus loin</h2>
+                <p>Ce code fait faire des allers-retours au moteur. Pour un projet réel, vous pourriez contrôler cette
+                    position en fonction d'un capteur de distance (comme dans mon projet de péage) ou d'un
+                    potentiomètre.</p>
+            </div>
+        </article>
+
+        <footer>
+            <p>&copy; 2025 ALIMI Marwane Ichola.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Péage Automatisé - Projet IoT</title>
+    <style>
+        /* MÊME STYLE GLOBAL POUR LA COHÉRENCE */
+        :root {
+            --primary-color: #1d4ed8;
+            --primary-hover: #1e40af;
+            --secondary-color: #0f172a;
+            --bg-color: #eff6ff;
+            --text-color: #334155;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* NAVIGATION */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* HEADER PROJET */
+        .project-header {
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* BADGES MATÉRIEL */
+        .tech-stack {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: 1px solid #bae6fd;
+        }
+
+        /* CONTENU */
+        .content-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* CODE BLOCK C++ */
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .code-comment {
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .code-keyword {
+            color: #c084fc;
+        }
+
+        .code-func {
+            color: #60a5fa;
+        }
+
+        /* LISTE MATERIEL */
+        .hardware-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hardware-item {
+            background: #f8fafc;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* ENCADRÉ FUTUR */
+        .future-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px dashed var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            color: #0c4a6e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">← Retour à l'accueil</a>
+        </nav>
+
+        <header class="project-header">
+            <h1>Poste de Péage Automatisé</h1>
+            <div class="project-meta">
+                <span>📅 Durée : 3 semaines</span>
+                <span>🔧 Rôle : Conception Circuit & Code C++</span>
+            </div>
+            <div class="tech-stack">
+                <span class="badge">Arduino Uno</span>
+                <span class="badge">RFID RC522</span>
+                <span class="badge">LCD I2C</span>
+                <span class="badge">Capteur IR</span>
+                <span class="badge">Servo</span>
+            </div>
+        </header>
+
+        <!-- IMAGE PRINCIPALE -->
+        <div
+            style="height: auto; margin-bottom: 40px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+            <img src="img/arduino.png" alt="Circuit Arduino Péage" style="width: 100%; height: auto; display: block;">
+        </div>
+
+        <!-- 1. LE DÉFI -->
+        <section class="content-section">
+            <h2>1. Le Défi Technique</h2>
+            <p>
+                L'objectif était de simuler un péage complet et autonome. La partie la plus complexe n'était pas
+                d'ouvrir la barrière, mais de gérer la sécurité de la fermeture.
+            </p>
+            <div
+                style="background-color: #fff1f2; color: #9f1239; padding: 15px; border-radius: 8px; border-left: 4px solid #f43f5e;">
+                <strong>Le problème majeur :</strong> Au début, la barrière se refermait après un délai fixe (ex: 3
+                secondes). Si la voiture était encore dessous, elle était percutée. Il fallait rendre le système
+                "conscient" de la présence du véhicule.
+            </div>
+        </section>
+
+        <!-- 2. MATÉRIEL -->
+        <section class="content-section">
+            <h2>2. L'Architecture Matérielle</h2>
+            <p>Ce système intègre plusieurs composants pour simuler une expérience utilisateur complète :</p>
+
+            <div class="hardware-list">
+                <div class="hardware-item"><span>🧠</span> Arduino Uno</div>
+                <div class="hardware-item"><span>💳</span> Module RFID (RC522)</div>
+                <div class="hardware-item"><span>🚧</span> Servomoteur (Barrière)</div>
+                <div class="hardware-item"><span>👀</span> Capteur Infrarouge (IR)</div>
+                <div class="hardware-item"><span>📺</span> Écran LCD 16x2</div>
+                <div class="hardware-item"><span>🔊</span> Buzzer (Alerte sonore)</div>
+                <div class="hardware-item"><span>🎨</span> LED RGB (Statut)</div>
+            </div>
+
+            <h3 style="margin-top:30px;">Le Flux Utilisateur :</h3>
+            <ol style="line-height: 1.8; color: #475569;">
+                <li>Le conducteur badge sa carte <strong>RFID</strong>.</li>
+                <li>Si valide : Le <strong>LCD</strong> affiche "Bienvenue", le <strong>Buzzer</strong> émet un bip, la
+                    <strong>LED</strong> passe au vert.
+                </li>
+                <li>Le <strong>Servo</strong> ouvre la barrière à 90°.</li>
+                <li>Le système attend que le <strong>Capteur IR</strong> détecte le passage complet du véhicule.</li>
+                <li>La barrière se referme.</li>
+            </ol>
+        </section>
+
+        <!-- 3. LE CODE -->
+        <section class="content-section">
+            <h2>3. Logique de Code (C++)</h2>
+            <p>
+                Voici l'extrait critique qui gère la sécurité de fermeture. J'utilise une boucle `while` pour bloquer la
+                fermeture tant que le capteur IR détecte un obstacle.
+            </p>
+            <pre>
+<span class="code-comment">// Fonction d'ouverture sécurisée</span>
+<span class="code-keyword">void</span> gererPassage() {
+  <span class="code-comment">// 1. Ouverture</span>
+  lcd.<span class="code-func">print</span>("Passage Autorise");
+  monServo.<span class="code-func">write</span>(90); 
+  digitalWrite(LED_VERTE, HIGH);
+  
+  <span class="code-comment">// 2. Attente de sécurité (TANT QUE la voiture est devant le capteur IR)</span>
+  <span class="code-comment">// LOW signifie souvent détection pour les capteurs IR standards</span>
+  <span class="code-keyword">while</span> (digitalRead(PIN_IR) == LOW) {
+    <span class="code-comment">// On ne fait rien, on attend que la voiture parte</span>
+    delay(100); 
+  }
+
+  <span class="code-comment">// 3. Petit délai tampon après le passage</span>
+  delay(1000);
+
+  <span class="code-comment">// 4. Fermeture</span>
+  monServo.<span class="code-func">write</span>(0);
+  digitalWrite(LED_VERTE, LOW);
+  digitalWrite(LED_ROUGE, HIGH);
+}</pre>
+        </section>
+
+        <!-- 4. AMÉLIORATIONS -->
+        <section class="content-section">
+            <h2>4. Évolution Future (V2.0)</h2>
+            <div class="future-box">
+                <h3>🚀 Prochaine étape : Vision par Ordinateur</h3>
+                <p>
+                    Si je devais refaire ce projet pour un environnement professionnel, j'ajouterais une <strong>caméra
+                        (ESP32-CAM ou Raspberry Pi)</strong>.
+                </p>
+                <p>
+                    Cela permettrait d'utiliser une bibliothèque de <strong>reconnaissance d'images (OpenCV)</strong>
+                    pour lire automatiquement les plaques d'immatriculation et facturer le client sans qu'il ait besoin
+                    de s'arrêter pour badger.
+                </p>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
