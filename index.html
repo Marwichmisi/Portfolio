@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marwane Ichola Alimi | Ingénieur IA & IoT</title>
+  <meta name="description" content="Portfolio ultra-moderne de Marwane : IoT, Intelligence Artificielle et Systèmes embarqués." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Space Grotesk', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              blue: '#C9DDFF',
+              green: '#97D8B2',
+              light: '#E8EBE4',
+              purple: '#999AC6',
+              dark: '#1a1829',
+              text: '#4a4865'
+            }
+          },
+          animation: {
+            'blob': 'blob 10s infinite alternate',
+            'blob-reverse': 'blob-reverse 12s infinite alternate',
+            'float': 'float 6s ease-in-out infinite',
+            'float-delayed': 'float 6s ease-in-out 3s infinite',
+            'spin-slow': 'spin 15s linear infinite',
+            'pulse-glow': 'pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1) rotate(0deg)' },
+              '50%': { transform: 'translate(40px, -40px) scale(1.1) rotate(20deg)' },
+              '100%': { transform: 'translate(-20px, 30px) scale(0.95) rotate(-10deg)' },
+            },
+            'blob-reverse': {
+              '0%': { transform: 'translate(0px, 0px) scale(1) rotate(0deg)' },
+              '50%': { transform: 'translate(-50px, 20px) scale(1.05) rotate(-20deg)' },
+              '100%': { transform: 'translate(30px, -30px) scale(0.9) rotate(15deg)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-15px)' },
+            },
+            'pulse-glow': {
+              '0%, 100%': { opacity: 0.6 },
+              '50%': { opacity: 1 },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #E8EBE4;
+      color: #4a4865;
+      overflow-x: hidden;
+    }
+    
+    ::selection {
+      background: #999AC6;
+      color: #ffffff;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #E8EBE4;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #999AC6;
+      border-radius: 10px;
+    }
+
+    /* Preloader CSS */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: rgba(232, 235, 228, 0.65);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.8s ease-out, visibility 0.8s;
+    }
+    .term-text {
+      font-family: 'Space Grotesk', monospace;
+      font-size: 1.1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid transparent;
+      opacity: 0;
+      width: 0;
+    }
+    .type-anim {
+      animation: typing 0.8s steps(30, end) forwards, blink-caret 0.5s step-end infinite;
+    }
+    .type-anim-done {
+      width: 100%;
+      border-right: transparent !important;
+    }
+    @keyframes typing { 
+      from { width: 0; opacity: 1; } 
+      to { width: 100%; opacity: 1; } 
+    }
+    @keyframes blink-caret { 
+      from, to { border-color: transparent } 
+      50% { border-color: #999AC6 } 
+    }
+
+    .glass-nav {
+      background: rgba(232, 235, 228, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 32px rgba(153, 154, 198, 0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.7);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(153, 154, 198, 0.25);
+      border-color: rgba(255, 255, 255, 1);
+    }
+
+    .glass-strong {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 32px rgba(153, 154, 198, 0.15);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #1a1829 0%, #999AC6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .text-gradient-neon {
+      background: linear-gradient(135deg, #999AC6 0%, #97D8B2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Animation Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .blob-shape {
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      animation: blobRadius 8s ease-in-out infinite alternate;
+    }
+    @keyframes blobRadius {
+      0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+      100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="glass-strong rounded-3xl p-8 max-w-md w-full mx-6 shadow-[0_20px_50px_rgba(153,154,198,0.2)]">
+      <div class="flex gap-2 mb-6">
+        <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+        <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+        <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+      </div>
+      <div class="font-mono text-sm md:text-base">
+        <p id="t1" class="term-text text-brand-purple">> Loading AI Models...</p>
+        <p id="t2" class="term-text text-brand-blue mt-3">> Booting IoT Protocols...</p>
+        <p id="t3" class="term-text text-brand-dark mt-3">> Initializing Output UI...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animated Background Orbs -->
+  <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+    <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-brand-blue/50 mix-blend-multiply filter blur-[100px] animate-blob"></div>
+    <div class="absolute top-[20%] right-[-10%] w-[450px] h-[450px] rounded-full bg-brand-green/40 mix-blend-multiply filter blur-[120px] animate-blob-reverse" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-[-10%] left-[10%] w-[600px] h-[600px] rounded-full bg-brand-purple/30 mix-blend-multiply filter blur-[130px] animate-blob" style="animation-delay: 4s;"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 py-4">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center transition-all">
+      <a href="#hero" class="text-xl font-display font-extrabold tracking-tight text-brand-dark flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-purple to-brand-green flex items-center justify-center text-white shadow-lg group-hover:rotate-12 transition-transform duration-300">
+          M
+        </div>
+        <span class="group-hover:text-brand-purple transition-colors duration-300">Marwane</span>
+      </a>
+      
+      <ul class="hidden md:flex space-x-8 text-sm font-semibold text-brand-text">
+        <li><a href="#profil" class="hover:text-brand-purple transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-brand-purple hover:after:w-full after:transition-all after:duration-300" data-i18n="nav_profil">Mon Profil</a></li>
+        <li><a href="#competences" class="hover:text-brand-purple transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-brand-purple hover:after:w-full after:transition-all after:duration-300" data-i18n="nav_stack">Stack</a></li>
+        <li><a href="#projets" class="hover:text-brand-purple transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-brand-purple hover:after:w-full after:transition-all after:duration-300" data-i18n="nav_projets">Projets</a></li>
+      </ul>Download CV -->
+        <a href="Marwane_Ichola_Alimi_CV.pdf" download="Marwane_Ichola_Alimi_CV.pdf" class="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full border border-brand-dark/20 text-brand-dark text-sm font-bold hover:bg-brand-dark hover:text-white transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></
+        <!-- Lang Toggle -->
+        <button id="langToggle" onclick="toggleLang()" class="px-2 py-1 font-extrabold text-brand-dark bg-white/40 ring-1 ring-white rounded-lg hover:bg-white transition-colors text-xs lg:text-sm">
+          <span id="langInd">FR</span> / EN
+        </button>
+        <!-- View CV -->
+        <a href="Marwane_Ichola_Alimi_CV.pdf" target="_blank" class="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full border border-brand-dark/20 text-brand-dark text-sm font-bold hover:bg-brand-dark hover:text-white transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span data-i18n="nav_view_cv">Voir CV</span>
+        </a>
+        <!-- CTA -->
+        <a href="#contact" class="hidden sm:flex px-5 lg:px-6 py-2.5 rounded-full bg-brand-dark text-white text-sm font-semibold hover:bg-brand-purple hover:shadow-[0_0_20px_rgba(153,154,198,0.5)] transition-all transform hover:-translate-y-1">
+          <span data-i18n="nav_talk">Let's Talk</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="pt-40 pb-20 min-h-screen flex items-center relative">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7 z-10" style="opacity: 0; animation: fadeUp 1s ease-out 2.8s forwards;">
+        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-strong mb-8 shadow-sm">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-[#4ade80]"></span>
+          </span>
+          <span class="text-xs md:text-sm font-bold text-brand-dark uppercase tracking-wide" data-i18n="hero_badge">Available for Work (2026)</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-6xl lg:text-[5rem] font-display font-extrabold text-brand-dark leading-[1.1] mb-6 tracking-tight" data-i18n="hero_title">
+          Crafting <span class="text-gradient">Intelligent</span> <br />
+          Hardware & AI
+        </h1>
+        
+        <p class="text-lg md:text-xl text-brand-text mb-10 max-w-2xl leading-relaxed" data-i18n="hero_desc">
+          Je suis <strong class="text-brand-dark font-semibold">Marwane Ichola Alimi</strong>. Étudiant en génie électrique, orienté automatisation, systèmes embarqués et Intelligence Artificielle générative. <b>Construire plutôt que rêver.</b>
+        </p>
+        
+        <div class="flex flex-wrap gap-4 font-display">
+          <a href="#projets" class="px-7 py-4 rounded-full bg-brand-dark text-white text-sm md:text-base font-bold shadow-[0_10px_30px_rgba(26,24,41,0.3)] hover:shadow-[0_10px_30px_rgba(153,154,198,0.6)] hover:bg-brand-purple hover:-translate-y-1 transition-all duration-300 flex items-center gap-2">
+            <span data-i18n="hero_projects">Voir mes projets</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <!-- Télécharger CV : The ATS Hack -->
+          <a href="Marwane_Ichola_Alimi_CV.pdf" download="Marwane_Ichola_Alimi_CV.pdf" class="px-7 py-4 rounded-full glass-card text-brand-dark text-sm md:text-base font-bold hover:bg-white hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span data-i18n="hero_dl_cv">Télécharger CV (.pdf)</span>
+          </a>
+        </div>
+        
+        <!-- Socials icon row -->
+        <div class="mt-12 flex gap-5">
+          <a href="https://github.com/Marwichmisi" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-brand-dark hover:text-brand-purple transition-all duration-300 hover:-translate-y-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/marwane-ichola-alimi-8a9966345" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-brand-dark hover:text-brand-blue transition-all duration-300 hover:-translate-y-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative flex justify-center mt-12 lg:mt-0" style="opacity: 0; animation: fadeUp 1s ease-out 3s forwards;">
+        <style>
+          @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+        </style>
+        <!-- Photo wrapper with huge effects -->
+        <div class="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px]">
+          <!-- Glow base -->
+          <div class="absolute inset-0 bg-brand-purple blur-2xl opacity-60 blob-shape animate-pulse-glow" style="transform: scale(1.1);"></div>
+          <div class="absolute inset-0 bg-brand-blue blur-xl opacity-70 blob-shape" style="animation-direction: reverse; transform: scale(1.05);"></div>
+          
+          <!-- Image container -->
+          <div class="relative w-full h-full glass-strong p-2 blob-shape border-[3px] border-white/80 z-10 overflow-hidden shadow-2xl flex items-center justify-center group">
+            <img src="photo.png" alt="Marwane Ichola Alimi" class="w-full h-full object-cover blob-shape scale-105 group-hover:scale-110 transition-transform duration-700 ease-out" />
+            <div class="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition-colors duration-500 z-10 blob-shape mix-blend-overlay"></div>
+          </div>
+          
+          <!-- Floating tech badges -->
+          <div class="absolute -top-6 -right-6 glass-strong px-5 py-3 rounded-2xl text-xs sm:text-sm font-display font-bold text-brand-dark shadow-xl animate-float z-20 flex items-center gap-2 border-[1.5px] border-white/90">
+            <svg class="text-brand-purple" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <span data-i18n="badge_llama">Fine-tuning Llama 3.2</span>
+          </div>
+          <div class="absolute -bottom-8 -left-4 glass-strong px-5 py-3 rounded-2xl text-xs sm:text-sm font-display font-bold text-brand-dark shadow-xl animate-float-delayed z-20 flex items-center gap-2 border-[1.5px] border-white/90">
+            <svg class="text-brand-green" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+            <span data-i18n="badge_iot">IoT & Hardware Maker</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objective & Profile -->
+  <section id="profil" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6 reveal">
+      <div class="glass-card rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-blue/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+        
+        <div class="grid md:grid-cols-2 gap-12 relative z-10">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-display font-extrabold text-brand-dark mb-6" data-i18n="obj_title">Objectifs 2026 🎯</h2>
+            <ul class="space-y-5">
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-blue/30 flex items-center justify-center text-brand-purple">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-brand-dark text-lg" data-i18n="obj_1_title">Devenir Machine en IA + IoT</h3>
+                  <p class="text-sm text-brand-text mt-1" data-i18n="obj_1_desc">Savoir construire (pas juste apprendre). Projets réels, architecture capteurs vers interface, maîtrise Python appliquée.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-green/30 flex items-center justify-center text-emerald-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-brand-dark text-lg" data-i18n="obj_2_title">Anglais Technique Fluide</h3>
+                  <p class="text-sm text-brand-text mt-1" data-i18n="obj_2_desc">Passer de débutant à intermédiaire/avancé pour avaler la doc technique de Big Tech et exporter mes projets.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-purple/20 flex items-center justify-center text-brand-purple">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-brand-dark text-lg" data-i18n="obj_3_title">Présence Digitale Forte</h3>
+                  <p class="text-sm text-brand-text mt-1" data-i18n="obj_3_desc">GitHub actif, posts tech LinkedIn concrets sur ce que je bâtis, portfolio dynamique.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="flex flex-col justify-center">
+            <h2 class="text-3xl md:text-4xl font-display font-extrabold text-brand-dark mb-6" data-i18n="edu_title">Formation & Infos</h2>
+            <div class="space-y-4">
+              <div class="glass p-5 rounded-2xl border-l-4 border-l-brand-purple relative overflow-hidden group bg-white/40">
+                <h4 class="font-bold text-brand-dark text-lg mb-1" data-i18n="edu_deg">Licence Génie Électrique & Info</h4>
+                <p class="text-sm text-brand-text mb-2" data-i18n="edu_sch">INSTI-Lokossa (Électronique & Électrotechnique)</p>
+                <span class="inline-block bg-white/60 px-3 py-1 rounded-md text-xs font-semibold text-brand-purple">2024 — 2027</span>
+              </div>
+              <div class="grid grid-cols-2 gap-4 mt-6">
+                <div class="p-4 rounded-2xl text-center bg-white/40">
+                  <h4 class="font-bold text-brand-dark" data-i18n="lang_title">Langues</h4>
+                  <p class="text-xs text-brand-text mt-1"><span data-i18n="lang_fr">Français (Avancé)</span><br/><span data-i18n="lang_en">Anglais (En progression)</span></p>
+                </div>
+                <div class="p-4 rounded-2xl text-center bg-white/40">
+                  <h4 class="font-bold text-brand-dark" data-i18n="loc_title">Localisation</h4>
+                  <p class="text-xs text-brand-text mt-1"><span data-i18n="loc_city">Cotonou, Benin</span><br/><span data-i18n="loc_mob">Mobilité internationale</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competences -->
+  <section id="competences" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl md:text-5xl font-display font-extrabold text-brand-dark mb-4 drop-shadow-[0_2px_10px_rgba(255,255,255,1)]" data-i18n="stack_title">Ma <span class="text-gradient">Stack</span> Tech</h2>
+        <p class="text-lg text-brand-text max-w-2xl mx-auto" data-i18n="stack_desc">Un mix précis entre software intelligent et hardware concret.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- IA / Data -->
+        <div class="glass-card rounded-[2rem] p-8 reveal group relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-purple/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center mb-6 text-brand-purple transform group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/><path d="M12 8a4 4 0 1 0 0 8 4 4 0 1 0 0-8Z"/></svg>
+          </div>
+          <h3 class="text-2xl font-display font-bold text-brand-dark mb-4" data-i18n="ai_title">Intelligence Artificielle</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-brand-text text-sm font-medium"><span class="w-2 h-2 rounded-full bg-brand-purple shadow-[0_0_8px_#999AC6]"></span> <span data-i18n="ai_1">Création de systèmes RAG</span></li>
+            <li class="flex items-center gap-3 text-brand-text text-sm font-medium"><span class="w-2 h-2 rounded-full bg-brand-purple shadow-[0_0_8px_#999AC6]"></span> <span data-i18n="ai_2">Fine-tuning LLM (Llama 3.2)</span></li>
+            <li class="flex items-center gap-3 text-brand-text text-sm font-medium"><span class="w-2 h-2 rounded-full bg-brand-purple shadow-[0_0_8px_#999AC6]"></span> <span data-i18n="ai_3">Bases de données vectorielles</span></li>
+          </ul>
+        </div>
+        
+        <!-- Dev & Auto -->
+        <div class="glass-card rounded-[2rem] p-8 reveal delay-100 group relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center mb-6 text-blue-500 transform group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+          </div>
+          <h3 class="text-2xl font-display font-bold text-brand-dark mb-4" data-i18n="dev_title">Développement</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-brand-text text-sm font-medium"><span class="w-2 h-2 rounded-full bg-brand-blue shadow-[0_0_8px_#C9DDFF]"></span> <span data-i18n="dev_1">Python (Automatisation & API)</span></li>
+            <li class="flex items-center gap-3 text-brand-text text-sm font-medium"><span class="w-2 h-2 rounded-full bg-brand-blue shadow-[0_0_8px_#C9DDFF]"></span> <span data-i18n="dev_2">Spec-Driven Dev par IA</span></li>
+            <li class="flex items-center gap-3 text-brand-text text-sm font-medium"><span class="w-2 h-2 rounded-full bg-brand-blue shadow-[0_0_8px_#C9DDFF]"></span> <span data-i18n="dev_3">Git / GitHub (Versionning)</span></li>
+          </ul>
+        </div>
+
+        <!-- Hardware & Systems -->
+        <div class="glass-card rounded-[2rem] p-8 reveal delay-200 group relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-green/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center mb-6 text-brand-green transform group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+          </div>
+          <h3 class="text-2xl font-display font-bold text-brand-dark mb-4" data-i18n="iot_title">Systèmes & IoT</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-brand-text text-sm font-medium"><span class="w-2 h-2 rounded-full bg-brand-green shadow-[0_0_8px_#97D8B2]"></span> <span data-i18n="iot_1">Arduino (Microcontrôleurs)</span></li>
+            <li class="flex items-center gap-3 text-brand-text text-sm font-medium"><span class="w-2 h-2 rounded-full bg-brand-green shadow-[0_0_8px_#97D8B2]"></span> <span data-i18n="iot_2">Linux (Dual boot, opti OS)</span></li>
+            <li class="flex items-center gap-3 text-brand-text text-sm font-medium"><span class="w-2 h-2 rounded-full bg-brand-green shadow-[0_0_8px_#97D8B2]"></span> <span data-i18n="iot_3">Workflows n8n (Automatisation)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projets -->
+  <section id="projets" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-left mb-12 flex flex-col md:flex-row md:items-end justify-between reveal">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-display font-extrabold text-brand-dark mb-4" data-i18n="proj_title">Mes <span class="text-gradient">Projets</span></h2>
+          <p class="text-lg text-brand-text max-w-xl" data-i18n="proj_desc">Applications concrètes de l'IA, architectures RAG et prototypage hardware.</p>
+        </div>
+        <a href="https://github.com/Marwichmisi" target="_blank" class="mt-4 md:mt-0 px-6 py-2 glass-strong rounded-full font-bold text-brand-dark hover:bg-white transition flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          <span data-i18n="proj_gh">Voir plus sur GitHub</span>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Project 1: PopBio -->
+        <article class="glass-card rounded-[2rem] p-8 flex flex-col reveal group h-full cursor-default">
+          <div class="flex justify-between items-start mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-purple to-brand-blue flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+            </div>
+            <div class="flex gap-2">
+              <a href="https://github.com/Marwichmisi/PopBio" target="_blank" class="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center hover:bg-white text-brand-dark transition-all" title="Code Source">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </a>
+              <a href="https://pop-bio.vercel.app/" target="_blank" class="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center hover:bg-white text-brand-dark transition-all" title="Live Demo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="text-2xl font-display font-extrabold text-brand-dark mb-3 group-hover:text-brand-purple transition-colors" data-i18n="proj1_title">PopBio — Générateur de Bio IA</h3>
+          <p class="text-brand-text mb-6 flex-grow leading-relaxed" data-i18n="proj1_desc">
+            Application web de génération de biographies. Utilisation directe de LLM via API pour produire des contenus ultra personnalisés de manière automatisée.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="px-3 py-1 bg-white/60 border border-white rounded-lg text-xs font-bold text-brand-dark">Node.js 18+</span>
+            <span class="px-3 py-1 bg-white/60 border border-white rounded-lg text-xs font-bold text-brand-dark">Google Gemini API</span>
+            <span class="px-3 py-1 bg-white/60 border border-white rounded-lg text-xs font-bold text-brand-dark">Vercel</span>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="glass-card rounded-[2rem] p-8 flex flex-col reveal delay-100 group h-full cursor-default">
+          <div class="flex justify-between items-start mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#4ade80] to-brand-green flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-display font-extrabold text-brand-dark mb-3 group-hover:text-brand-green transition-colors" data-i18n="proj2_title">Système RAG Base Vectorielle</h3>
+          <p class="text-brand-text mb-6 flex-grow leading-relaxed" data-i18n="proj2_desc">
+            Mise en place d'un pipeline complet IA pour la recherche augmentée. Alimentation d'une base de données vectorielle et couplage avec LLM pour des réponses d'une haute précision.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="px-3 py-1 bg-white/60 border border-white rounded-lg text-xs font-bold text-brand-dark">Python</span>
+            <span class="px-3 py-1 bg-white/60 border border-white rounded-lg text-xs font-bold text-brand-dark">Embeddings</span>
+            <span class="px-3 py-1 bg-white/60 border border-white rounded-lg text-xs font-bold text-brand-dark">RAG Pipeline</span>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="glass-card rounded-[2rem] p-8 flex flex-col reveal group h-full cursor-default">
+          <div class="flex justify-between items-start mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-dark to-[#3b385e] flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m8 17 4 4 4-4"/></svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-display font-extrabold text-brand-dark mb-3" data-i18n="proj3_title">Système de Portail Automatique</h3>
+          <p class="text-brand-text mb-6 flex-grow leading-relaxed" data-i18n="proj3_desc">
+            Conception matérielle et logicielle d'un accès automatisé basé sur capteurs. Intégration hardware (logique de contrôle) pour un scénario IoT intelligent.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="px-3 py-1 bg-white/60 border border-white rounded-lg text-xs font-bold text-brand-dark">Arduino</span>
+            <span class="px-3 py-1 bg-white/60 border border-white rounded-lg text-xs font-bold text-brand-dark">Capteurs IoT</span>
+            <span class="px-3 py-1 bg-white/60 border border-white rounded-lg text-xs font-bold text-brand-dark">C/C++</span>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="glass-card rounded-[2rem] p-8 flex flex-col reveal delay-100 group h-full cursor-default">
+          <div class="flex justify-between items-start mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#999AC6] to-[#C9DDFF] flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-display font-extrabold text-brand-dark mb-3" data-i18n="proj4_title">Générateur de Bio Twitter (Fine-Tuned)</h3>
+          <p class="text-brand-text mb-6 flex-grow leading-relaxed" data-i18n="proj4_desc">
+            Entraînement et fine-tuning local du modèle Llama 3.2 pour s'adapter spécifiquement à la création de contenus courts et percutants sur X/Twitter.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span class="px-3 py-1 bg-white/60 border border-white rounded-lg text-xs font-bold text-brand-dark">Llama 3.2</span>
+            <span class="px-3 py-1 bg-white/60 border border-white rounded-lg text-xs font-bold text-brand-dark">Fine-Tuning</span>
+            <span class="px-3 py-1 bg-white/60 border border-white rounded-lg text-xs font-bold text-brand-dark">IA Générative</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience CTA Section -->
+  <section id="experience" class="py-24 relative">
+    <div class="max-w-4xl mx-auto px-6 text-center reveal">
+      <div class="glass-strong rounded-[3rem] p-12 relative overflow-hidden">
+        <!-- Glows -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial from-brand-blue/30 to-transparent"></div>
+        
+        <h2 class="text-3xl md:text-5xl font-display font-black text-brand-dark relative z-10 mb-6" data-i18n="cta_title">
+          Prêt à créer de la valeur.
+        </h2>
+        <p class="text-brand-text text-lg relative z-10 mb-10 max-w-2xl mx-auto leading-relaxed" data-i18n="cta_desc">
+          Avec mon bagage théorique (INSTI) et mon expérience terrain en <b>Installation et Gestion Énergétique (IGE)</b>, je construis des ponts robustes entre le monde physique et l'IA.
+        </p>
+        <a id="contact" href="mailto:alimimarwane@gmail.com" class="relative z-10 inline-flex items-center justify-center px-10 py-5 rounded-full bg-brand-dark text-white text-lg font-bold shadow-[0_10px_30px_rgba(26,24,41,0.3)] hover:bg-brand-purple transition-all duration-300 transform hover:scale-105 group">
+          <span data-i18n="cta_btn">Me contacter</span>
+          <svg class="ml-3 group-hover:translate-x-2 transition-transform" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8 border-t border-white/40 mt-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium text-brand-text">
+      <p>© 2026 Marwane Ichola Alimi.</p>
+      <p><span data-i18n="footer">Construit avec passion & code</span>.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts: Preloader, Scroll Animation, and i18n -->
+  <script>
+    /* ========== PRELOADER LOGIC ========== */
+    window.addEventListener('load', () => {
+      const t1 = document.getElementById('t1');
+      const t2 = document.getElementById('t2');
+      const t3 = document.getElementById('t3');
+      const preloader = document.getElementById('preloader');
+      
+      document.body.style.overflow = 'hidden';
+      
+      setTimeout(() => { t1.classList.add('type-anim'); }, 200);
+      setTimeout(() => { 
+        t1.classList.add('type-anim-done'); 
+        t2.classList.add('type-anim'); 
+      }, 1000);
+      setTimeout(() => { 
+        t2.classList.add('type-anim-done'); 
+        t3.classList.add('type-anim'); 
+      }, 1800);
+      setTimeout(() => { 
+        t3.classList.add('type-anim-done'); 
+        preloader.style.opacity = '0';
+        document.body.style.overflow = '';
+        setTimeout(() => preloader.style.display = 'none', 600);
+      }, 2600);
+    });
+
+    /* ========== SCROLL ANIMATIONS ========== */
+    document.addEventListener('DOMContentLoaded', () => {
+      const reveals = document.querySelectorAll('.reveal');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      });
+      
+      reveals.forEach(reveal => {
+        observer.observe(reveal);
+      });
+
+      const nav = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) {
+          nav.classList.add('shadow-md', 'py-2');
+          nav.classList.remove('py-4');
+        } else {
+          nav.classList.remove('shadow-md', 'py-2');
+          nav.classList.add('py-4');
+        }
+      });
+    });
+
+    /* ========== TRANSLATION (i18n) LOGIC ========== */
+    const translations = {
+      fr: {
+        nav_profil: "Mon Profil",
+        nav_stack: "Stack",
+        nav_projets: "Projets",
+        nav_view_cv: "Voir CV",
+        nav_talk: "Let's Talk",
+        hero_badge: "Available for Work (2026)",
+        hero_title: "Crafting <span class='text-gradient'>Intelligent</span> <br /> Hardware & AI",
+        hero_desc: "Je suis <strong class='text-brand-dark font-semibold'>Marwane Ichola Alimi</strong>. Étudiant en génie électrique, orienté automatisation, systèmes embarqués et Intelligence Artificielle générative. <b>Construire plutôt que rêver.</b>",
+        hero_projects: "Voir mes projets",
+        hero_dl_cv: "Télécharger CV (.pdf)",
+        badge_llama: "Fine-tuning Llama 3.2",
+        badge_iot: "IoT & Hardware Maker",
+        obj_title: "Objectifs 2026 🎯",
+        obj_1_title: "Devenir Machine en IA + IoT",
+        obj_1_desc: "Savoir construire (pas juste apprendre). Projets réels, architecture capteurs vers interface, maîtrise Python appliquée.",
+        obj_2_title: "Anglais Technique Fluide",
+        obj_2_desc: "Passer de débutant à intermédiaire/avancé pour avaler la doc technique de Big Tech et exporter mes projets.",
+        obj_3_title: "Présence Digitale Forte",
+        obj_3_desc: "GitHub actif, posts tech LinkedIn concrets sur ce que je bâtis, portfolio dynamique.",
+        edu_title: "Formation & Infos",
+        edu_deg: "Licence Génie Électrique & Info",
+        edu_sch: "INSTI-Lokossa (Électronique & Électrotechnique)",
+        lang_title: "Langues",
+        lang_fr: "Français (Avancé)",
+        lang_en: "Anglais (En progression)",
+        loc_title: "Localisation",
+        loc_city: "Cotonou, Benin",
+        loc_mob: "Mobilité internationale",
+        stack_title: "Ma <span class='text-gradient'>Stack</span> Tech",
+        stack_desc: "Un mix précis entre software intelligent et hardware concret.",
+        ai_title: "Intelligence Artificielle",
+        ai_1: "Création de systèmes RAG",
+        ai_2: "Fine-tuning LLM (Llama 3.2)",
+        ai_3: "Bases de données vectorielles",
+        dev_title: "Développement",
+        dev_1: "Python (Automatisation & API)",
+        dev_2: "Spec-Driven Dev par IA",
+        dev_3: "Git / GitHub (Versionning)",
+        iot_title: "Systèmes & IoT",
+        iot_1: "Arduino (Microcontrôleurs)",
+        iot_2: "Linux (Dual boot, opti OS)",
+        iot_3: "Workflows n8n (Automatisation)",
+        proj_title: "Mes <span class='text-gradient'>Projets</span>",
+        proj_desc: "Applications concrètes de l'IA, architectures RAG et prototypage hardware.",
+        proj_gh: "Voir plus sur GitHub",
+        proj1_title: "PopBio — Générateur de Bio IA",
+        proj1_desc: "Application web de génération de biographies. Utilisation directe de LLM via API pour produire des contenus ultra personnalisés de manière automatisée.",
+        proj2_title: "Système RAG Base Vectorielle",
+        proj2_desc: "Mise en place d'un pipeline complet IA pour la recherche augmentée. Alimentation d'une base de données vectorielle et couplage avec LLM pour des réponses d'une haute précision.",
+        proj3_title: "Système de Portail Automatique",
+        proj3_desc: "Conception matérielle et logicielle d'un accès automatisé basé sur capteurs. Intégration hardware (logique de contrôle) pour un scénario IoT intelligent.",
+        proj4_title: "Générateur de Bio Twitter (Fine-Tuned)",
+        proj4_desc: "Entraînement et fine-tuning local du modèle Llama 3.2 pour s'adapter spécifiquement à la création de contenus courts et percutants sur X/Twitter.",
+        cta_title: "Prêt à créer de la valeur.",
+        cta_desc: "Avec mon bagage théorique (INSTI) et mon expérience terrain en <b>Installation et Gestion Énergétique (IGE)</b>, je construis des ponts robustes entre le monde physique et l'IA.",
+        cta_btn: "Me contacter",
+        footer: "Construit avec passion & code"
+      },
+      en: {
+        nav_profil: "My Profile",
+        nav_stack: "Stack",
+        nav_projets: "Projects",
+        nav_view_cv: "View Resume",
+        nav_talk: "Let's Talk",
+        hero_badge: "Available for Work (2026)",
+        hero_title: "Crafting <span class='text-gradient'>Intelligent</span> <br /> Hardware & AI",
+        hero_desc: "I am <strong class='text-brand-dark font-semibold'>Marwane Ichola Alimi</strong>. Electrical engineering student focused on automation, embedded systems, and Generative AI. <b>Building instead of dreaming.</b>",
+        hero_projects: "View my projects",
+        hero_dl_cv: "Download Resume (.pdf)",
+        badge_llama: "Fine-tuning Llama 3.2",
+        badge_iot: "IoT & Hardware Maker",
+        obj_title: "2026 Goals 🎯",
+        obj_1_title: "Become an AI + IoT Machine",
+        obj_1_desc: "Knowing how to build (not just learn). Real-world projects, sensor-to-interface architecture, Python mastery.",
+        obj_2_title: "Fluent Technical English",
+        obj_2_desc: "Going from beginner to advanced to absorb Big Tech documentation and expand internationally.",
+        obj_3_title: "Strong Digital Presence",
+        obj_3_desc: "Active GitHub, concrete tech posts on LinkedIn showing what I build, dynamic portfolio.",
+        edu_title: "Education & Details",
+        edu_deg: "BSc Electrical & IT Eng.",
+        edu_sch: "INSTI-Lokossa (Electronics & Electrotechnics)",
+        lang_title: "Languages",
+        lang_fr: "French (Advanced)",
+        lang_en: "English (Improving)",
+        loc_title: "Location",
+        loc_city: "Cotonou, Benin",
+        loc_mob: "International Mobility",
+        stack_title: "My Tech <span class='text-gradient'>Stack</span>",
+        stack_desc: "A precise mix of intelligent software and concrete hardware.",
+        ai_title: "Artificial Intelligence",
+        ai_1: "RAG Systems & LLMs",
+        ai_2: "Fine-tuning (Llama 3.2)",
+        ai_3: "Vector Databases",
+        dev_title: "Development",
+        dev_1: "Python (API & Auto)",
+        dev_2: "Spec-Driven Dev via AI",
+        dev_3: "Git / GitHub Versioning",
+        iot_title: "Systems & IoT",
+        iot_1: "Arduino & Microcontrollers",
+        iot_2: "Linux (OS, Bash, Dual Boot)",
+        iot_3: "n8n (Automated Workflows)",
+        proj_title: "My <span class='text-gradient'>Projects</span>",
+        proj_desc: "Concrete AI applications, RAG pipelines, and hardware prototyping.",
+        proj_gh: "See more on GitHub",
+        proj1_title: "PopBio — AI Bio Generator",
+        proj1_desc: "Web App generating interactive and targeted bios using Google Gemini API direct integration.",
+        proj2_title: "Vector DB RAG System",
+        proj2_desc: "Full AI pipeline feeding a vector database, coupled with LLM for highly accurate semantic search.",
+        proj3_title: "Automated Gate System",
+        proj3_desc: "C/C++ IoT logic coupling smart sensors and controllers for automated physical access.",
+        proj4_title: "Twitter AI Bio (Fine-Tuning)",
+        proj4_desc: "Local fine-tuning of the Llama 3.2 model specialized for generating impactful social content.",
+        cta_title: "Ready to create value.",
+        cta_desc: "With my academic background (INSTI) and field experience in <b>Energy Management (IGE)</b>, I build robust bridges between physical reality and AI.",
+        cta_btn: "Contact Me",
+        footer: "Built with passion & code"
+      }
+    };
+
+    let currentLang = 'fr';
+    function toggleLang() {
+      currentLang = currentLang === 'fr' ? 'en' : 'fr';
+      document.getElementById('langInd').innerText = currentLang === 'fr' ? 'FR' : 'EN';
+      
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(translations[currentLang][key]) {
+          el.innerHTML = translations[currentLang][key];
+        }
+      });
+    }
+  </script>
+</body>
+</html>

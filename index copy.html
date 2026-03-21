@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marwane Ichola Alimi | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio professionnel de Marwane Ichola Alimi, étudiant en génie électrique et informatique, spécialisé en IoT, IA et systèmes embarqués."
+    />
+    <meta name="color-scheme" content="light" />
+
+    <meta property="og:title" content="Marwane Ichola Alimi | Portfolio" />
+    <meta
+      property="og:description"
+      content="Profil, projets, compétences et expérience en ingénierie électrique, IA, IoT et systèmes embarqués."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marwichmisi.github.io/Portfolio" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      @page {
+        margin: 12mm;
+      }
+
+      @media print {
+        body {
+          background: #ffffff !important;
+          color: #09090b !important;
+        }
+
+        .no-print {
+          display: none !important;
+        }
+
+        section,
+        header,
+        footer {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        a {
+          text-decoration: none;
+          color: #09090b !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gradient-to-b from-blue-50 via-[#FAFAFA] to-[#FAFAFA] text-[#09090B] antialiased">
+    <div class="min-h-screen">
+      <header class="border-b border-zinc-200 bg-white/95 backdrop-blur-sm">
+        <nav
+          class="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-5 md:flex-row md:items-center md:justify-between"
+          aria-label="Navigation principale"
+        >
+          <a href="#top" class="cursor-pointer text-base font-bold tracking-tight text-zinc-900">MARWANE ICHOLA ALIMI</a>
+          <ul class="flex flex-wrap gap-4 text-sm font-medium text-zinc-600">
+            <li><a href="#profil" class="cursor-pointer transition-colors duration-200 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]">Profil</a></li>
+            <li><a href="#objectifs" class="cursor-pointer transition-colors duration-200 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]">Objectifs</a></li>
+            <li><a href="#competences" class="cursor-pointer transition-colors duration-200 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]">Compétences</a></li>
+            <li><a href="#projets" class="cursor-pointer transition-colors duration-200 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]">Projets</a></li>
+            <li><a href="#experience" class="cursor-pointer transition-colors duration-200 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]">Expériences</a></li>
+            <li><a href="#contact" class="cursor-pointer transition-colors duration-200 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="top" class="mx-auto w-full max-w-6xl px-6 py-12 md:py-16" itemscope itemtype="https://schema.org/Person">
+        <section class="grid gap-8 rounded-2xl border border-blue-100 bg-white/90 p-6 shadow-sm md:gap-10 md:p-8 md:grid-cols-12">
+          <div class="md:col-span-8">
+            <p class="mb-4 inline-flex rounded-md border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700">
+              Portfolio IA + IoT Professionnel
+            </p>
+            <h1 class="text-3xl font-extrabold tracking-tight text-zinc-950 md:text-5xl" itemprop="name">
+              Marwane Ichola Alimi
+            </h1>
+            <p class="mt-5 max-w-3xl text-base leading-relaxed text-zinc-700 md:text-lg" itemprop="description">
+              Étudiant en génie électrique et informatique, orienté IoT, intelligence artificielle et systèmes embarqués.
+              Je construis des solutions concrètes combinant électronique, automatisation et IA appliquée pour des cas d’usage réels.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-semibold text-zinc-700">Python</span>
+              <span class="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-semibold text-zinc-700">Node.js 18+</span>
+              <span class="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-semibold text-zinc-700">RAG Systems</span>
+              <span class="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-semibold text-zinc-700">Embedded & IoT</span>
+            </div>
+            <div class="mt-7 flex flex-wrap gap-3 no-print">
+              <a
+                href="#contact"
+                class="cursor-pointer rounded-md bg-[#2563EB] px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-blue-700 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+              >
+                Me contacter
+              </a>
+              <a
+                href="mailto:alimimarwane@gmail.com"
+                class="cursor-pointer rounded-md border border-zinc-300 bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 transition-colors duration-200 hover:bg-zinc-100 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+              >
+                Envoyer un email
+              </a>
+            </div>
+          </div>
+
+          <aside class="md:col-span-4" aria-label="Informations de contact">
+            <div class="rounded-xl border border-zinc-200 bg-white p-5">
+              <h2 class="text-sm font-semibold uppercase tracking-wide text-zinc-500">Coordonnées</h2>
+              <ul class="mt-4 space-y-3 text-sm text-zinc-700">
+                <li><strong class="font-semibold text-zinc-900">Localisation :</strong> <span itemprop="address">Cotonou, Benin</span></li>
+                <li><strong class="font-semibold text-zinc-900">Téléphone :</strong> <a class="cursor-pointer transition-colors duration-200 hover:text-zinc-950" href="tel:+2290199015239" itemprop="telephone">+229 01 99 01 52 39</a></li>
+                <li><strong class="font-semibold text-zinc-900">Email :</strong> <a class="cursor-pointer transition-colors duration-200 hover:text-zinc-950" href="mailto:alimimarwane@gmail.com" itemprop="email">alimimarwane@gmail.com</a></li>
+                <li><strong class="font-semibold text-zinc-900">LinkedIn :</strong> <a class="cursor-pointer text-[#2563EB] transition-colors duration-200 hover:text-blue-700" href="https://www.linkedin.com/in/marwane-ichola-alimi-8a9966345" target="_blank" rel="noopener noreferrer">Profil LinkedIn</a></li>
+                <li><strong class="font-semibold text-zinc-900">Portfolio actuel :</strong> <a class="cursor-pointer text-[#2563EB] transition-colors duration-200 hover:text-blue-700" href="https://marwichmisi.github.io/Portfolio" target="_blank" rel="noopener noreferrer">marwichmisi.github.io/Portfolio</a></li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+
+        <section id="profil" class="border-b border-zinc-200 py-12 md:py-16">
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-950">Profil</h2>
+          <p class="mt-5 max-w-4xl text-base leading-relaxed text-zinc-700">
+            Étudiant en génie électrique et informatique, spécialisé en électronique et électrotechnique, avec un fort intérêt pour l’IoT,
+            l’intelligence artificielle et les systèmes embarqués. Passionné par la création de solutions innovantes combinant hardware et software,
+            avec une approche orientée automatisation, IA générative et développement assisté. Mon cap est de devenir opérationnel sur des projets IA + IoT complets,
+            de la couche capteurs jusqu’à l’interface utilisateur.
+          </p>
+        </section>
+
+        <section id="objectifs" class="border-b border-zinc-200 py-12 md:py-16">
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-950">Objectifs 2026</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-3">
+            <article class="rounded-xl border border-zinc-200 bg-white p-5">
+              <h3 class="text-base font-semibold text-zinc-950">Devenir opérationnel en IA + IoT</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-700">
+                <li>Maîtriser Python appliqué à l’IA (RAG, API, automatisation)</li>
+                <li>Construire 2 projets complets IoT + IA</li>
+                <li>Comprendre l’architecture capteurs → traitement → interface</li>
+              </ul>
+            </article>
+            <article class="rounded-xl border border-zinc-200 bg-white p-5">
+              <h3 class="text-base font-semibold text-zinc-950">Améliorer l’anglais technique</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-700">
+                <li>Niveau actuel : débutant</li>
+                <li>Objectif : passer à un niveau intermédiaire</li>
+                <li>Savoir lire la documentation et présenter mes projets en anglais</li>
+              </ul>
+            </article>
+            <article class="rounded-xl border border-zinc-200 bg-white p-5">
+              <h3 class="text-base font-semibold text-zinc-950">Renforcer ma présence en ligne</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-700">
+                <li>Publier régulièrement sur LinkedIn (posts tech simples)</li>
+                <li>Maintenir GitHub actif et documenté</li>
+                <li>Mettre à jour ce portfolio à chaque projet clé</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="competences" class="border-b border-zinc-200 py-12 md:py-16">
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-950">Compétences techniques</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-3">
+            <article class="rounded-xl border border-zinc-200 bg-white p-5">
+              <h3 class="text-base font-semibold text-zinc-950">Programmation & Développement</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-700">
+                <li>Python (IoT, automatisation, IA)</li>
+                <li>Arduino (programmation de microcontrôleurs)</li>
+                <li>Développement assisté par IA (spec-driven development)</li>
+              </ul>
+            </article>
+            <article class="rounded-xl border border-zinc-200 bg-white p-5">
+              <h3 class="text-base font-semibold text-zinc-950">Systèmes & Outils</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-700">
+                <li>Linux (environnement avancé, dual boot, optimisation système)</li>
+                <li>Git / GitHub</li>
+                <li>n8n (automatisation de workflows)</li>
+              </ul>
+            </article>
+            <article class="rounded-xl border border-zinc-200 bg-white p-5">
+              <h3 class="text-base font-semibold text-zinc-950">Intelligence Artificielle</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-700">
+                <li>Création de systèmes RAG (Retrieval-Augmented Generation)</li>
+                <li>Fine-tuning de modèles (Llama 3.2)</li>
+                <li>Bases de données vectorielles</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="projets" class="border-b border-zinc-200 py-12 md:py-16">
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-950">Projets</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-3">
+            <article class="rounded-xl border border-blue-200 bg-gradient-to-b from-white to-blue-50 p-5 transition-colors duration-200 hover:border-blue-300">
+              <h3 class="text-base font-semibold text-zinc-950">PopBio – Générateur de bio IA</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-700">
+                <li>Application web de génération de biographies avec LLM</li>
+                <li>Stack : Node.js 18+, npm/yarn, intégration API Google Gemini</li>
+                <li>Conçu pour produire des bios personnalisées de manière rapide et simple</li>
+              </ul>
+              <div class="mt-4 flex flex-wrap gap-2 no-print">
+                <a href="https://pop-bio.vercel.app/" target="_blank" rel="noopener noreferrer" class="cursor-pointer rounded-md bg-[#2563EB] px-3 py-1.5 text-xs font-semibold text-white transition-colors duration-200 hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]">Voir la démo</a>
+                <a href="https://github.com/Marwichmisi/PopBio" target="_blank" rel="noopener noreferrer" class="cursor-pointer rounded-md border border-zinc-300 bg-white px-3 py-1.5 text-xs font-semibold text-zinc-900 transition-colors duration-200 hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]">Code source</a>
+              </div>
+            </article>
+            <article class="rounded-xl border border-zinc-200 bg-white p-5 transition-colors duration-200 hover:border-zinc-300">
+              <h3 class="text-base font-semibold text-zinc-950">Système RAG avec base vectorielle</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-700">
+                <li>Implémentation d’un pipeline IA pour recherche augmentée</li>
+                <li>Utilisation de modèles LLM et embeddings</li>
+                <li>Cas d’usage : amélioration de la pertinence des réponses</li>
+              </ul>
+              <p class="mt-4 text-xs font-medium text-zinc-500">Lien de démo/code : disponible sur demande</p>
+            </article>
+            <article class="rounded-xl border border-zinc-200 bg-white p-5 transition-colors duration-200 hover:border-zinc-300">
+              <h3 class="text-base font-semibold text-zinc-950">Système de portail automatique</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-700">
+                <li>Conception d’un système automatisé basé sur capteurs</li>
+                <li>Intégration électronique + logique de contrôle</li>
+                <li>Objectif : automatisation intelligente d’accès</li>
+              </ul>
+              <p class="mt-4 text-xs font-medium text-zinc-500">Lien de démo/code : disponible sur demande</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="experience" class="border-b border-zinc-200 py-12 md:py-16">
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-950">Expériences professionnelles</h2>
+          <article class="mt-6 rounded-xl border border-zinc-200 bg-white p-5">
+            <h3 class="text-base font-semibold text-zinc-950">Installation et Gestion Énergétique (IGE), Porto-Novo</h3>
+            <p class="mt-2 text-sm text-zinc-600">Août 2025 – Septembre 2025 | Décembre 2025 – Janvier 2026</p>
+            <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-700">
+              <li>Participation à des projets d’installation électrique</li>
+              <li>Maintenance et suivi de systèmes énergétiques</li>
+              <li>Application pratique des concepts d’électrotechnique</li>
+            </ul>
+          </article>
+        </section>
+
+        <section id="formation" class="border-b border-zinc-200 py-12 md:py-16">
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-950">Formation</h2>
+          <article class="mt-6 rounded-xl border border-zinc-200 bg-white p-5">
+            <h3 class="text-base font-semibold text-zinc-950">Institut National Supérieur de Technologie Industrielle (INSTI-Lokossa)</h3>
+            <p class="mt-2 text-sm text-zinc-600">Licence en Génie Électrique et Informatique (Électronique & Électrotechnique)</p>
+            <p class="mt-1 text-sm text-zinc-600">Octobre 2024 – Juillet 2027</p>
+          </article>
+        </section>
+
+        <section id="langues" class="border-b border-zinc-200 py-12 md:py-16">
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-950">Langues</h2>
+          <ul class="mt-5 grid gap-3 text-sm text-zinc-700 md:grid-cols-2">
+            <li class="rounded-lg border border-zinc-200 bg-white px-4 py-3"><span class="font-semibold text-zinc-950">Français :</span> Avancé</li>
+            <li class="rounded-lg border border-zinc-200 bg-white px-4 py-3"><span class="font-semibold text-zinc-950">Anglais :</span> Débutant</li>
+            <li class="rounded-lg border border-zinc-200 bg-white px-4 py-3"><span class="font-semibold text-zinc-950">Goun :</span> Intermédiaire</li>
+            <li class="rounded-lg border border-zinc-200 bg-white px-4 py-3"><span class="font-semibold text-zinc-950">Nago :</span> Débutant</li>
+          </ul>
+        </section>
+
+        <section id="interets" class="border-b border-zinc-200 py-12 md:py-16">
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-950">Centres d’intérêt</h2>
+          <ul class="mt-5 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-700">
+            <li>Intelligence artificielle & IA générative</li>
+            <li>Open Source</li>
+            <li>IoT & systèmes embarqués</li>
+            <li>Veille technologique (LLMs, automatisation, nouvelles architectures IA)</li>
+          </ul>
+        </section>
+
+        <section id="contact" class="py-12 md:py-16">
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-950">Contact</h2>
+          <p class="mt-4 max-w-3xl text-sm leading-relaxed text-zinc-700">
+            Disponible pour des stages et collaborations en ingénierie intelligente (IA, IoT, systèmes embarqués), avec un fort focus sur des projets concrets et mesurables.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="mailto:alimimarwane@gmail.com" class="cursor-pointer rounded-md bg-zinc-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-zinc-800 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]">Email professionnel</a>
+            <a href="https://www.linkedin.com/in/marwane-ichola-alimi-8a9966345" target="_blank" rel="noopener noreferrer" class="cursor-pointer rounded-md border border-zinc-300 bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 transition-colors duration-200 hover:bg-zinc-100 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]">LinkedIn</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-zinc-200 bg-white">
+        <div class="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-6 text-xs text-zinc-600 md:flex-row md:items-center md:justify-between">
+          <p>© 2026 Marwane Ichola Alimi. Tous droits réservés.</p>
+          <p class="no-print">Version orientée recrutement Big Tech | Design sobre, accessible et compatible impression PDF</p>
+        </div>
+      </footer>
+    </div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Marwane Ichola Alimi",
+        "jobTitle": "Étudiant en Génie Électrique et Informatique",
+        "address": "Cotonou, Benin",
+        "email": "alimimarwane@gmail.com",
+        "telephone": "+2290199015239",
+        "url": "https://marwichmisi.github.io/Portfolio",
+        "sameAs": ["https://www.linkedin.com/in/marwane-ichola-alimi-8a9966345"],
+        "knowsAbout": [
+          "IoT",
+          "Intelligence Artificielle",
+          "Systèmes embarqués",
+          "Automatisation",
+          "Électrotechnique"
+        ]
+      }
+    </script>
+  </body>
+</html>
